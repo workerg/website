@@ -1,0 +1,204 @@
+.header {
+
+    display: flex;
+    position: fixed;
+    /* 固定定位 */
+    top: 0;
+    /* 顶部对齐 */
+    width: 100%;
+    /* 全宽 */
+    z-index: 1000;
+    align-items: center;
+    width: 100%;
+    height: 6vw;
+    background-color: #F8F8F8;
+    // background-color: transparent;
+
+    div {
+        display: block;
+        height: 100%;
+        width: 10vw;
+        border-left: 1px solid #d1d2d4;
+        border-right: 1px solid #d1d2d4;
+        font-size: large;
+        text-align: center;
+        line-height: 6vw;
+        font-size: 1.3vw;
+        transition: 0.5s ease;
+
+        &:hover {
+            // font-size: 1.4vw;
+            transform: scale(1.2);
+            background-color: #d1d2d4;
+        }
+    }
+
+    div:nth-child(1) {
+
+        height: 6vw;
+        width: 6vw;
+        margin-left: 10vw;
+        border-left: none;
+        border-right: none;
+
+        img {
+            height: 100%;
+            width: 100%;
+            border-radius: 10%;
+            transition: transform 0.8s ease-in-out;
+
+            &:hover {
+                transform: rotate(360deg);
+            }
+        }
+    }
+
+    div:nth-child(2) {
+        margin-left: 35vw;
+    }
+}
+
+// 轮播图
+.carousel {
+    margin-top: 5.5vw;
+
+    @media(max-width:768px) {
+        .carousel-item {
+            height: 250px;
+        }
+    }
+
+    @media(min-width:768px) {
+        .carousel-item {
+            height: 400px;
+        }
+    }
+
+    @media(min-width:992px) {
+        .carousel-item {
+            height: 500px;
+        }
+    }
+
+    .carousel-item {
+        
+        align-items: center; /* 垂直居中 */
+        // background-size: cover;
+        // background-position: center 0;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        
+
+        
+
+            img {
+                
+                 vertical-align: middle;
+                width: 100%;
+                // max-width: 100%;
+                height: auto;
+            }
+        
+    }
+
+    // .carousel-item:nth-child(1) {
+    //     a {
+    //         display: inline-block;
+
+    //         img {
+    //             display: block;
+    //             /* 将<img>元素设置为块级元素，以消除底部间隙 */
+    //             max-width: 100%;
+    //             /* 确保图片不会超出其父容器的宽度 */
+    //             height: auto;
+    //         }
+    //     }
+
+    // }
+
+
+
+}
+
+// 视口宽度大于992；一行排4个盒子  col-lg-3
+//  视口宽度大于768；一行排2个盒子  col-md-6
+.project {
+    margin-top: 60px;
+    text-align: center;
+
+    .row {
+        margin-bottom: 1vw;
+
+        div {
+            position: relative;
+            margin-bottom: 10px;
+            height: 200px;
+            overflow: hidden;
+            // & img:hover {
+            //     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+            // }
+            // a {
+            //     // 块级的宽度和父级一样大
+            //     display: block;
+            //     height: 200px;
+            //     background-color: white;
+            //     border-radius: 4px;
+
+            // }
+            //添加图片放大功能//暂时不能使用
+            .photo {
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+
+            .title {
+                text-align: left;
+                position: absolute;
+                left: 25px;
+                top: 135px;
+                z-index: 2;
+                width: 80%;
+                color: #fff;
+                font-size: 20px;
+                font-weight: 700;
+            }
+
+            .mask {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(transparent,
+                        rgba(0, 0, 0, 0.5));
+                opacity: 0;
+                transition: all .5s;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .button {
+        height: 5vh;
+        width: 16vh;
+        border-radius: 6%;
+        background-color: #F8F8F8;
+        transition: 0.2s ease;
+        margin-bottom: 10vw;
+
+        &:hover {
+            transform: scale(1.2);
+            background-color: #d1d2d4;
+        }
+    }
+
+
+
+}
